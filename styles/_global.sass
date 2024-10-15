@@ -8,6 +8,12 @@ body
 .visually-hidden
     @include visually-hidden
 
+.desktop-hedden
+    display: none
+
+.is-hidden
+    display: none
+
 .container
     max-width: calc( $site-width + $padding-inline-tablet * 2 )
     padding-inline: $padding-inline-tablet
@@ -50,3 +56,24 @@ body
         background-color: $color-secondary
         color: $color-lite
 
+.link
+    color: $color-dark
+    font-size: 15px
+    font-weight: 600
+    @include hover
+        color: $color-secondary
+
+.is-active
+    color: $color-secondary
+    position: relative
+    &::after
+        content: ''
+        display: block
+        height: 2px
+        width: calc( 100% - $padding-inline-link * 2 )
+        background-color: currentColor
+        position: absolute
+        left: 50%
+        top: 80%
+        transform: translateX(-50%)
+        clip-path: polygon(0 0, 100% 0, 91% 100%, 9% 100%)
