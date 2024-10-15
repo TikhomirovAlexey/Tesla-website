@@ -1,0 +1,52 @@
+:where( input, textarea, a, button ):focus-visible
+    outline: 3px solid $color-secondary
+
+body
+    font-family: $font-family-base
+    background-color: $color-lite
+
+.visually-hidden
+    @include visually-hidden
+
+.container
+    max-width: calc( $site-width + $padding-inline-tablet * 2 )
+    padding-inline: $padding-inline-tablet
+    margin-inline: auto
+
+.title
+    color: $color-dark
+    font-size: 90px
+    font-weight: 600
+
+.subtitle
+    color: $color-secondary
+    font-size: 70px
+    font-weight: 600
+
+.heading
+    color: $color-lite
+    font-size: 30px
+    font-weight: 600
+    line-height: 1.23
+
+.text
+    color: $color-lite
+    font-size: 15px
+    font-weight: 500
+    line-height: 1.2
+    &_dark
+        color: $color-dark
+
+.button
+    color: $color-secondary
+    font-size: 13px
+    font-weight: 700
+    text-transform: uppercase
+    padding: 1em 3em
+    background-color: transparent
+    border: 2px solid $color-secondary
+    transition: background 0.3s
+    @include hover
+        background-color: $color-secondary
+        color: $color-lite
+
