@@ -1,5 +1,26 @@
+@media ( max-width: 1200px )
+    .section
+        grid-template-columns: 100%
+        grid-template-rows: repeat(2, 500px)
+        height: auto
+        &__subtitle
+            margin-top: 8px
+            margin-left: auto
+            margin-right: 54px
+        &__info
+            padding: 52px 34px
+        &__info-inner
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-rows: repeat(2, auto)
+            gap: 60px
+        &__info-header
+            margin-bottom: 0
+        &__buttons-wrapper
+            grid-column: 1 / -1
+
+    
 @media ( max-width: 1024px )
-    .mobile-hidden
+    .tablet-hidden
         display: none
 
     .desktop-hedden
@@ -21,6 +42,9 @@
     .container
         padding-inline: $padding-inline-mobile
     
+    .mobile-hidden
+        display: none
+
     .title
         font-size: 50px
     
@@ -33,14 +57,23 @@
             row-gap: 18px
         &__body-wrapper
             row-gap: 44px
-        &__info
-            column-gap: 38px
-        &__info-text
+
+    .box-info
+        column-gap: 38px
+        &__text
             font-size: 15px
 
     .buttons-wrapper
         column-gap: 10px
-            
+
+    .section
+        grid-template-rows: repeat(2, minmax(300px, 1fr))
+        &__info
+            padding: 30px 18px
+        &__info-inner
+            grid-template-columns: 1fr
+            grid-template-rows: 1fr
+       
 
 @media ( max-width: 425px )
     .menu-mobile

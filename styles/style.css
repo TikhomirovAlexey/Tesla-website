@@ -271,6 +271,18 @@ body {
     color: #fff;
   }
 }
+@media (hover: hover) {
+  .button_hover-color-lite:hover {
+    background-color: #fff;
+    color: #E51937;
+  }
+}
+@media (hover: none) {
+  .button_hover-color-lite:active {
+    background-color: #fff;
+    color: #E51937;
+  }
+}
 .button_dark {
   color: #000;
 }
@@ -286,6 +298,7 @@ body {
 }
 .button_lite {
   color: #fff;
+  border-color: currentColor;
 }
 .button_with-icon {
   display: flex;
@@ -298,16 +311,16 @@ body {
 .button_without-border {
   border: none;
 }
-.button_without-border > :where(svg, span) {
+.button_without-border > svg {
   transition: scale 0.3s;
 }
 @media (hover: hover) {
-  .button_without-border:hover > :where(svg, span) {
+  .button_without-border:hover > svg {
     scale: 1.2;
   }
 }
 @media (hover: none) {
-  .button_without-border:active > :where(svg, span) {
+  .button_without-border:active > svg {
     scale: 1.2;
   }
 }
@@ -466,31 +479,6 @@ body {
   -moz-column-gap: 106px;
        column-gap: 106px;
 }
-.billboard__info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 80px;
-       column-gap: 80px;
-}
-.billboard__info-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -moz-column-gap: 14px;
-       column-gap: 14px;
-}
-.billboard__info-text {
-  font-size: 20px;
-  font-weight: 600;
-  color: #000;
-}
-.billboard__info-span_big {
-  font-size: 1.75em;
-}
-.billboard__info-span_small {
-  font-size: 0.6em;
-}
 .billboard__footer-summary {
   display: flex;
   justify-content: center;
@@ -511,6 +499,40 @@ body {
   transform: rotate(-180deg);
 }
 
+.box-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
+}
+.box-info__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
+}
+.box-info__item_medium-gap {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.box-info__text {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+.box-info__text_lite {
+  color: #fff;
+}
+.box-info__text-span_big {
+  font-size: 1.75em;
+}
+.box-info__text-span_small {
+  font-size: 0.6em;
+  font-weight: 400;
+}
+
 .buttons-wrapper {
   display: flex;
   justify-content: center;
@@ -519,8 +541,78 @@ body {
        column-gap: 22px;
 }
 
+.section {
+  display: grid;
+  grid-template-columns: 1fr minmax(442px, 30%);
+  height: 100vh;
+}
+.section__body {
+  display: flex;
+  background: url("../img/interior-car.jpeg") center top/cover no-repeat;
+}
+.section__subtitle {
+  margin-top: 64px;
+  margin-left: 64px;
+}
+.section__img {
+  width: 100%;
+}
+.section__info {
+  background-color: #E51937;
+  padding: 52px 44px 62px 50px;
+}
+.section__info-inner {
+  display: grid;
+  grid-template-columns: 348px;
+  grid-template-rows: auto 1fr auto;
+  align-items: flex-start;
+  height: 100%;
+}
+.section__info-header {
+  margin-bottom: 54px;
+}
+.section__heading {
+  margin-bottom: 12px;
+}
+.section__box-info {
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 30px;
+}
+.section__buttons-wrapper {
+  align-content: flex-end;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 500px);
+    height: auto;
+  }
+  .section__subtitle {
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: 54px;
+  }
+  .section__info {
+    padding: 52px 34px;
+  }
+  .section__info-inner {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 60px;
+  }
+  .section__info-header {
+    margin-bottom: 0;
+  }
+  .section__buttons-wrapper {
+    grid-column: 1/-1;
+  }
+}
 @media (max-width: 1024px) {
-  .mobile-hidden {
+  .tablet-hidden {
     display: none;
   }
   .desktop-hedden {
@@ -545,6 +637,9 @@ body {
   .container {
     padding-inline: 18px;
   }
+  .mobile-hidden {
+    display: none;
+  }
   .title {
     font-size: 50px;
   }
@@ -557,16 +652,26 @@ body {
   .billboard__body-wrapper {
     row-gap: 44px;
   }
-  .billboard__info {
+  .box-info {
     -moz-column-gap: 38px;
          column-gap: 38px;
   }
-  .billboard__info-text {
+  .box-info__text {
     font-size: 15px;
   }
   .buttons-wrapper {
     -moz-column-gap: 10px;
          column-gap: 10px;
+  }
+  .section {
+    grid-template-rows: repeat(2, minmax(300px, 1fr));
+  }
+  .section__info {
+    padding: 30px 18px;
+  }
+  .section__info-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
 @media (max-width: 425px) {

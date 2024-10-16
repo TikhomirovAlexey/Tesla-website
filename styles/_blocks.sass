@@ -66,21 +66,6 @@
     &__body-wrapper
         @include flex(center, center)
         column-gap: 106px
-    &__info
-        @include flex(center, center)
-        column-gap: 80px
-    &__info-item
-        @include flex(center, center)
-        column-gap: 14px
-    &__info-text
-        font-size: 20px
-        font-weight: 600
-        color: $color-dark
-    &__info-span
-        &_big
-            font-size: 1.75em
-        &_small
-            font-size: 0.6em
     &__footer-summary
         @include flex(center, center)
     &__footer-summary::-webkit-details-marker
@@ -95,9 +80,61 @@
         content: ""
         transform: rotate(-180deg)
 
+.box-info
+    @include flex(center, center)
+    column-gap: 80px
+    &__item
+        @include flex(center, center)
+        column-gap: 14px
+        &_medium-gap
+            column-gap: 20px
+    &__text
+        color: $color-dark
+        font-size: 20px
+        font-weight: 600
+        &_lite
+            color: $color-lite
+    &__text-span
+        &_big
+            font-size: 1.75em
+        &_small
+            font-size: 0.6em
+            font-weight: 400
 
 .buttons-wrapper
     @include flex(center, center)
     column-gap: 22px
 
+.section
+    display: grid
+    grid-template-columns: 1fr minmax(442px, 30%)
+    height: 100vh
+    &__body
+        display: flex
+        background: url('../img/interior-car.jpeg') center top/cover no-repeat
+    &__subtitle
+        margin-top: 64px
+        margin-left: 64px
+    &__img
+        width: 100%
+    &__info
+        background-color: $color-secondary
+        padding: 52px 44px 62px 50px
+    &__info-inner
+        display: grid
+        grid-template-columns: 348px
+        grid-template-rows: auto 1fr auto
+        align-items: flex-start
+        height: 100%
+    &__info-header
+        margin-bottom: 54px
+    &__heading
+        margin-bottom: 12px
+    &__box-info
+        flex-direction: column
+        align-items: flex-start
+        row-gap: 30px
+    &__buttons-wrapper
+        align-content: flex-end
+        column-gap: 12px
 

@@ -56,22 +56,27 @@ body
         @include hover
             background-color: $color-secondary
             color: $color-lite
+    &_hover-color-lite
+        @include hover
+            background-color: $color-lite
+            color: $color-secondary
     &_dark
         color: $color-dark
         @include hover
             color: $color-secondary
     &_lite
         color: $color-lite
+        border-color: currentColor
     &_with-icon
         @include flex(center, center)
         column-gap: 8px
         padding: 0.7em 2.5em
     &_without-border
         border: none
-        & > :where(svg, span)
+        & > svg
             transition: scale 0.3s
         @include hover
-            & > :where(svg, span)
+            & > svg
                 scale: 1.2
 
 .link
