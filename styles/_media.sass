@@ -1,13 +1,27 @@
 @media ( max-width: 1200px )
     .section
-        grid-template-columns: 100%
-        grid-template-rows: repeat(2, 500px)
+        flex-wrap: wrap
         height: auto
+        overflow: hidden
+        &__body
+            height: 500px
+            width: 100%
         &__subtitle
             margin-top: 8px
             margin-left: auto
             margin-right: 54px
+            &_big
+                margin-top: 0
+                margin-left: 0
+                right: auto
+                left: 50%
+                top: 5%
+                transform: translateX(-50%)
+        &__img
+            height: 80%
+            width: auto
         &__info
+            width: 100%
             padding: 52px 34px
         &__info-inner
             grid-template-columns: repeat(2, 1fr)
@@ -17,6 +31,9 @@
             margin-bottom: 0
         &__buttons-wrapper
             grid-column: 1 / -1
+
+    .protection-assessment__box-info
+        display: none
 
     
 @media ( max-width: 1024px )
@@ -67,7 +84,8 @@
         column-gap: 10px
 
     .section
-        grid-template-rows: repeat(2, minmax(300px, 1fr))
+        &__body
+            height: 300px
         &__info
             padding: 30px 18px
         &__info-inner

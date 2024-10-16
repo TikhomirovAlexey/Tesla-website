@@ -94,6 +94,8 @@
         font-weight: 600
         &_lite
             color: $color-lite
+        &_big
+            font-size: 30px
     &__text-span
         &_big
             font-size: 1.75em
@@ -106,18 +108,34 @@
     column-gap: 22px
 
 .section
-    display: grid
-    grid-template-columns: 1fr minmax(442px, 30%)
+    display: flex
     height: 100vh
+    &_row-revers
+        flex-direction: row-reverse
     &__body
+        width: 70%
         display: flex
         background: url('../img/interior-car.jpeg') center top/cover no-repeat
+        &_without-bg
+            position: relative
+            background: none
+            @include flex(center, center)
+    &__img
+        height: auto
     &__subtitle
         margin-top: 64px
         margin-left: 64px
-    &__img
-        width: 100%
+        &_big
+            margin-top: 0
+            margin-left: 0
+            position: absolute
+            @include fluid-text(100, 200)
+            opacity: 0.1
+            right: 0
+            top: 10%
+            z-index: -100
     &__info
+        width: max(442px, 30%)
         background-color: $color-secondary
         padding: 52px 44px 62px 50px
     &__info-inner
@@ -126,6 +144,8 @@
         grid-template-rows: auto 1fr auto
         align-items: flex-start
         height: 100%
+        &_j-content-end
+            justify-content: flex-end
     &__info-header
         margin-bottom: 54px
     &__heading
@@ -137,4 +157,25 @@
     &__buttons-wrapper
         align-content: flex-end
         column-gap: 12px
+
+.stars
+    display: flex
+    gap: 4px
+
+.protection-assessment
+    &__list
+        color: $color-lite
+        font-size: 17px
+        font-weight: 700
+        text-transform: uppercase
+        @include column(12px)
+        margin-bottom: 102px
+    &__list-item 
+        max-width: 292px
+        @include flex(space-between, center)
+    &__list-item sub
+        font-size: 10px
+        opacity: 0.7
+    &__box-info
+        justify-content: flex-start
 

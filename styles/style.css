@@ -525,6 +525,9 @@ body {
 .box-info__text_lite {
   color: #fff;
 }
+.box-info__text_big {
+  font-size: 30px;
+}
 .box-info__text-span_big {
   font-size: 1.75em;
 }
@@ -542,22 +545,43 @@ body {
 }
 
 .section {
-  display: grid;
-  grid-template-columns: 1fr minmax(442px, 30%);
+  display: flex;
   height: 100vh;
 }
+.section_row-revers {
+  flex-direction: row-reverse;
+}
 .section__body {
+  width: 70%;
   display: flex;
   background: url("../img/interior-car.jpeg") center top/cover no-repeat;
+}
+.section__body_without-bg {
+  position: relative;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__img {
+  height: auto;
 }
 .section__subtitle {
   margin-top: 64px;
   margin-left: 64px;
 }
-.section__img {
-  width: 100%;
+.section__subtitle_big {
+  margin-top: 0;
+  margin-left: 0;
+  position: absolute;
+  font-size: clamp(100px, 13.8888888889vw, 200px);
+  opacity: 0.1;
+  right: 0;
+  top: 10%;
+  z-index: -100;
 }
 .section__info {
+  width: max(442px, 30%);
   background-color: #E51937;
   padding: 52px 44px 62px 50px;
 }
@@ -567,6 +591,9 @@ body {
   grid-template-rows: auto 1fr auto;
   align-items: flex-start;
   height: 100%;
+}
+.section__info-inner_j-content-end {
+  justify-content: flex-end;
 }
 .section__info-header {
   margin-bottom: 54px;
@@ -585,18 +612,64 @@ body {
        column-gap: 12px;
 }
 
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.protection-assessment__list {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-bottom: 102px;
+}
+.protection-assessment__list-item {
+  max-width: 292px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.protection-assessment__list-item sub {
+  font-size: 10px;
+  opacity: 0.7;
+}
+.protection-assessment__box-info {
+  justify-content: flex-start;
+}
+
 @media (max-width: 1200px) {
   .section {
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(2, 500px);
+    flex-wrap: wrap;
     height: auto;
+    overflow: hidden;
+  }
+  .section__body {
+    height: 500px;
+    width: 100%;
   }
   .section__subtitle {
     margin-top: 8px;
     margin-left: auto;
     margin-right: 54px;
   }
+  .section__subtitle_big {
+    margin-top: 0;
+    margin-left: 0;
+    right: auto;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+  }
+  .section__img {
+    height: 80%;
+    width: auto;
+  }
   .section__info {
+    width: 100%;
     padding: 52px 34px;
   }
   .section__info-inner {
@@ -609,6 +682,9 @@ body {
   }
   .section__buttons-wrapper {
     grid-column: 1/-1;
+  }
+  .protection-assessment__box-info {
+    display: none;
   }
 }
 @media (max-width: 1024px) {
@@ -663,8 +739,8 @@ body {
     -moz-column-gap: 10px;
          column-gap: 10px;
   }
-  .section {
-    grid-template-rows: repeat(2, minmax(300px, 1fr));
+  .section__body {
+    height: 300px;
   }
   .section__info {
     padding: 30px 18px;
