@@ -48,12 +48,56 @@
     &__list-item
         width: 100%
         text-align: center
-    &__link 
+    &__link
         display: block
         padding-block: 12px
 
-            
-             
+.billboard
+    margin-bottom: 38px
+    &__header
+        text-align: center
+        margin-bottom: 26px
+    &__body
+        background: url("../img/tesla-wordmark.png") center top/contain no-repeat
+        @include flex-column(center, center, 26px)
+        margin-bottom: 36px
+    &__img
+        height: auto
+    &__body-wrapper
+        @include flex(center, center)
+        column-gap: 106px
+    &__info
+        @include flex(center, center)
+        column-gap: 80px
+    &__info-item
+        @include flex(center, center)
+        column-gap: 14px
+    &__info-text
+        font-size: 20px
+        font-weight: 600
+        color: $color-dark
+    &__info-span
+        &_big
+            font-size: 1.75em
+        &_small
+            font-size: 0.6em
+    &__footer-summary
+        @include flex(center, center)
+    &__footer-summary::-webkit-details-marker
+        display: none
+    &__footer-summary::before
+        transition: transform 0.3s
+        content: ""
+        width: 34px
+        height: 22px
+        background: url("../img/icons/arrow-down-red.svg") center/contain no-repeat
+    &__footer[open] > summary::before
+        content: ""
+        transform: rotate(-180deg)
 
+
+.buttons-wrapper
+    @include flex(center, center)
+    column-gap: 22px
 
 

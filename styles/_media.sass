@@ -5,13 +5,49 @@
     .desktop-hedden
         display: block
 
+    .billboard
+        &__body-wrapper
+            flex-wrap: wrap
+            row-gap: 54px
+        &__info
+            width: 100%
+            column-gap: 66px
+
+    .buttons-wrapper
+        width: 100%
+        column-gap: 14px
+
 @media ( max-width: 768px )
     .container
         padding-inline: $padding-inline-mobile
+    
+    .title
+        font-size: 50px
+    
+    .text
+        &_mini-mobile
+            font-size: 10px
+
+    .billboard
+        &__body
+            row-gap: 18px
+        &__body-wrapper
+            row-gap: 44px
+        &__info
+            column-gap: 38px
+        &__info-text
+            font-size: 15px
+
+    .buttons-wrapper
+        column-gap: 10px
+            
 
 @media ( max-width: 425px )
     .menu-mobile
         width: 100%
+
+    .button
+        padding: 0.7em 1.5em
 
 
     

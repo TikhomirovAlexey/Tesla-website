@@ -257,18 +257,58 @@ body {
   padding: 1em 3em;
   background-color: transparent;
   border: 2px solid #E51937;
-  transition: background 0.3s;
+  transition: all 0.3s;
 }
 @media (hover: hover) {
-  .button:hover {
+  .button_hover-color-secondary:hover {
     background-color: #E51937;
     color: #fff;
   }
 }
 @media (hover: none) {
-  .button:active {
+  .button_hover-color-secondary:active {
     background-color: #E51937;
     color: #fff;
+  }
+}
+.button_dark {
+  color: #000;
+}
+@media (hover: hover) {
+  .button_dark:hover {
+    color: #E51937;
+  }
+}
+@media (hover: none) {
+  .button_dark:active {
+    color: #E51937;
+  }
+}
+.button_lite {
+  color: #fff;
+}
+.button_with-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  padding: 0.7em 2.5em;
+}
+.button_without-border {
+  border: none;
+}
+.button_without-border > :where(svg, span) {
+  transition: scale 0.3s;
+}
+@media (hover: hover) {
+  .button_without-border:hover > :where(svg, span) {
+    scale: 1.2;
+  }
+}
+@media (hover: none) {
+  .button_without-border:active > :where(svg, span) {
+    scale: 1.2;
   }
 }
 
@@ -400,6 +440,85 @@ body {
   padding-block: 12px;
 }
 
+.billboard {
+  margin-bottom: 38px;
+}
+.billboard__header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.billboard__body {
+  background: url("../img/tesla-wordmark.png") center top/contain no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 26px;
+  margin-bottom: 36px;
+}
+.billboard__img {
+  height: auto;
+}
+.billboard__body-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 106px;
+       column-gap: 106px;
+}
+.billboard__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
+}
+.billboard__info-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
+}
+.billboard__info-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.billboard__info-span_big {
+  font-size: 1.75em;
+}
+.billboard__info-span_small {
+  font-size: 0.6em;
+}
+.billboard__footer-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.billboard__footer-summary::-webkit-details-marker {
+  display: none;
+}
+.billboard__footer-summary::before {
+  transition: transform 0.3s;
+  content: "";
+  width: 34px;
+  height: 22px;
+  background: url("../img/icons/arrow-down-red.svg") center/contain no-repeat;
+}
+.billboard__footer[open] > summary::before {
+  content: "";
+  transform: rotate(-180deg);
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 22px;
+       column-gap: 22px;
+}
+
 @media (max-width: 1024px) {
   .mobile-hidden {
     display: none;
@@ -407,14 +526,54 @@ body {
   .desktop-hedden {
     display: block;
   }
+  .billboard__body-wrapper {
+    flex-wrap: wrap;
+    row-gap: 54px;
+  }
+  .billboard__info {
+    width: 100%;
+    -moz-column-gap: 66px;
+         column-gap: 66px;
+  }
+  .buttons-wrapper {
+    width: 100%;
+    -moz-column-gap: 14px;
+         column-gap: 14px;
+  }
 }
 @media (max-width: 768px) {
   .container {
     padding-inline: 18px;
   }
+  .title {
+    font-size: 50px;
+  }
+  .text_mini-mobile {
+    font-size: 10px;
+  }
+  .billboard__body {
+    row-gap: 18px;
+  }
+  .billboard__body-wrapper {
+    row-gap: 44px;
+  }
+  .billboard__info {
+    -moz-column-gap: 38px;
+         column-gap: 38px;
+  }
+  .billboard__info-text {
+    font-size: 15px;
+  }
+  .buttons-wrapper {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
 }
 @media (max-width: 425px) {
   .menu-mobile {
     width: 100%;
+  }
+  .button {
+    padding: 0.7em 1.5em;
   }
 }/*# sourceMappingURL=style.css.map */

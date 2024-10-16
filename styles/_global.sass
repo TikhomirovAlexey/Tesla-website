@@ -51,10 +51,28 @@ body
     padding: 1em 3em
     background-color: transparent
     border: 2px solid $color-secondary
-    transition: background 0.3s
-    @include hover
-        background-color: $color-secondary
+    transition: all 0.3s
+    &_hover-color-secondary
+        @include hover
+            background-color: $color-secondary
+            color: $color-lite
+    &_dark
+        color: $color-dark
+        @include hover
+            color: $color-secondary
+    &_lite
         color: $color-lite
+    &_with-icon
+        @include flex(center, center)
+        column-gap: 8px
+        padding: 0.7em 2.5em
+    &_without-border
+        border: none
+        & > :where(svg, span)
+            transition: scale 0.3s
+        @include hover
+            & > :where(svg, span)
+                scale: 1.2
 
 .link
     color: $color-dark
