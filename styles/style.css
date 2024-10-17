@@ -183,8 +183,8 @@ a {
   font-style: normal;
   font-display: swap;
 }
-:where(input, textarea, a, button):focus-visible {
-  outline: 3px solid #E51937;
+:where(input, textarea, a, button, details):focus-visible {
+  outline: 3px solid #000;
 }
 
 body {
